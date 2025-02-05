@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import './Card.css'
 
-export default function Card({ card }) {
+export default function Card({ card, handleFail, handleShuffle }) {
     const [isClicked, setIsClicked] = useState(false);
 
     // useEffect(() => {
@@ -8,7 +9,11 @@ export default function Card({ card }) {
     // })
 
     return (
-        <li className="card">
+        <li className="card" onClick={() => {
+            if (isClicked) handleFail()
+            setIsClicked(true)
+            handleShuffle()
+        }}>
             <h2 className="card-title">{card.name}</h2>
             <img src={card.url} alt={card.name} />
         </li>
