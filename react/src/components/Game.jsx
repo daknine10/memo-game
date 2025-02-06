@@ -10,20 +10,19 @@ export default function Game() {
 
     const handleFail = () => {
         setIsFailed(true)
-        if (score > bestScore) {
-            setBestScore(score)
-        }
     }
 
     const handleShuffle = () => {
         const newComponents = shuffle([...cardComponents])
-        console.log(newComponents)
         setCardComponents(newComponents)
         setScore(score => score + 1)
     }
 
     const handleRetry = () => {
         setIsFailed(false);
+        if (score > bestScore) {
+            setBestScore(score)
+        }
         setScore(0);
     }
 
@@ -43,6 +42,7 @@ export default function Game() {
             (<>
                 <div> YOU LOSE! </div>
                 <button onClick={handleRetry}>TRY AGAIN!</button>
+                
             </>
             )}
             <h2>Best Score: {bestScore}</h2>
