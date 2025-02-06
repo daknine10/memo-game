@@ -4,10 +4,6 @@ import './Card.css'
 export default function Card({ card, handleFail, handleShuffle }) {
     const [isClicked, setIsClicked] = useState(false);
 
-    // useEffect(() => {
-    //     const img = await fetch()
-    // })
-
     return (
         <li className="card" onClick={() => {
             if (isClicked) handleFail()
