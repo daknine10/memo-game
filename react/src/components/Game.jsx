@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import Card from './Card.jsx'
-import cards from './cards.js'
 import './Game.css'
 
-export default function Game() {
+export default function Game({ cards }) {
     const [isFailed, setIsFailed] = useState(false);
     const [score, setScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);

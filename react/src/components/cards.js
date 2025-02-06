@@ -30,3 +30,25 @@ const cards = [
 ]
 
 export default cards
+
+// const breeds = ['abyssinian', 'bengal', 'british longhair', 'chausie', 'sphynx', 'turkish angora', 'somali', 'ragdoll', 'aegean', 'asian']
+// let data = []
+
+// async function getBreeds() {
+//     try {
+//         for (let breed of breeds) {
+//             const response = await fetch(`https://api.api-ninjas.com/v1/cats?name=${breed}`, {
+//                 method: 'GET',
+//                 headers: {'X-Api-Key': 'XKc15D8DGgOdWjjwihSDwQ==kpEPznCfohq954yL'}
+//             })
+//             const json = await response.json()
+//             data.push(json)
+//             cards.push({name: json[0].name, url: json[0].image_link})
+//         }
+//     }
+//     catch {
+//         console.log('Error')
+//     }
+// }
+
+// getBreeds()
