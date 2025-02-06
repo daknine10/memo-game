@@ -5,15 +5,26 @@ import './Game.css'
 
 export default function Game() {
     const [isFailed, setIsFailed] = useState(false);
+    const [score, setScore] = useState(0);
+    const [bestScore, setBestScore] = useState(0);
 
     const handleFail = () => {
         setIsFailed(true)
+        if (score > bestScore) {
+            setBestScore(score)
+        }
     }
 
     const handleShuffle = () => {
         const newComponents = shuffle([...cardComponents])
         console.log(newComponents)
         setCardComponents(newComponents)
+        setScore(score => score + 1)
+    }
+
+    const handleRetry = () => {
+        setIsFailed(false);
+        setScore(0);
     }
 
     const cardArr = []
@@ -23,9 +34,19 @@ export default function Game() {
 
 
     return (
-        <ul className='container'>
-            {!isFailed ? (cardComponents) : (<div> YOU LOSE! </div>)}
-        </ul>
+        <div className='container'>
+            <h1>Current Score: {score}</h1>
+            {!isFailed ? 
+            <ul className='card-container'>
+                {cardComponents}
+            </ul> : 
+            (<>
+                <div> YOU LOSE! </div>
+                <button onClick={handleRetry}>TRY AGAIN!</button>
+            </>
+            )}
+            <h2>Best Score: {bestScore}</h2>
+        </div>
     )
 }
 
