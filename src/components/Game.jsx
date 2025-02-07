@@ -19,7 +19,7 @@ export default function Game({ cards }) {
     const handleShuffle = () => {
         setScore(prevScore => {
             const newScore = prevScore + 1;
-            if (newScore === 2) {
+            if (newScore === 10) {
                 setIsWon(true);
             }
             return newScore;
@@ -44,20 +44,20 @@ export default function Game({ cards }) {
 
     return (
         <div className='container'>
-            <h1>Current Score: {score}</h1>
+            <h2>Current Score: {score}</h2>
             {!isWon ?
                 !isFailed ? 
                 <ul className='card-container'>
                     {cardComponents}
                 </ul> : 
                 (<>
-                    <div> YOU LOSE! </div>
+                    <h1 class='lose'> YOU LOSE! </h1>
                     <button onClick={handleRetry}>TRY AGAIN!</button>
                 </>
                 )
                 : 
                 <>
-                    <div> ROUND WON! </div>
+                    <h1 class='win'> ROUND WON! </h1>
                     <button onClick={handleWin}>CONTINUE</button>
                 </>}
             <h2>Best Score: {bestScore}</h2>
