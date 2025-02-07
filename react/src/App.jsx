@@ -30,6 +30,7 @@ export default function App() {
 
     return (
         <div>
+            <h1>Cat Memo Game</h1>
             {loading ? <div>Loading...</div> : <Game cards={cards}/>}
         </div>
   )
