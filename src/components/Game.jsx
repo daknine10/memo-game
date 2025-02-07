@@ -19,7 +19,7 @@ export default function Game({ cards }) {
     const handleShuffle = () => {
         setScore(prevScore => {
             const newScore = prevScore + 1;
-            if (newScore === 10) {
+            if (newScore % 10 === 0) {
                 setIsWon(true);
             }
             return newScore;
