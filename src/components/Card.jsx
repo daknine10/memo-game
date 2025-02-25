@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './Card.css'
 
 export default function Card({ card, handleFail, handleShuffle }) {
