@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Card from './Card.jsx'
 import './Game.css'
 
@@ -51,13 +51,13 @@ export default function Game({ cards }) {
                     {cardComponents}
                 </ul> : 
                 (<>
-                    <h1 class='lose'> YOU LOSE! </h1>
+                    <h1 className='lose'> YOU LOSE! </h1>
                     <button onClick={handleRetry}>TRY AGAIN!</button>
                 </>
                 )
                 : 
                 <>
-                    <h1 class='win'> ROUND WON! </h1>
+                    <h1 className='win'> ROUND WON! </h1>
                     <button onClick={handleWin}>CONTINUE</button>
                 </>}
             <h2>Best Score: {bestScore}</h2>
